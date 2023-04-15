@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, SimpleGrid, Text, Container } from '@chakra-ui/react'
 
 interface QuizProps {
   formData: Array<T>
@@ -32,10 +32,6 @@ const Quiz: React.FC<QuizProps> = ({ formData, qNumber, setQNumber, playerPoints
   function htmlDecode(input: string) {
     var doc = new DOMParser().parseFromString(input, 'text/html')
     return doc.documentElement.textContent
-  }
-
-  if (qNumber >= formData.length) {
-    console.log('Quiz finished')
   }
 
   function handleAnswerCheck(answer: string) {
@@ -82,12 +78,19 @@ const Quiz: React.FC<QuizProps> = ({ formData, qNumber, setQNumber, playerPoints
               borderRadius="5px"
             >
               <Button
+                flexWrap="wrap"
                 onClick={() => handleAnswerCheck(question)}
                 key={question}
                 width="100%"
                 height="100%"
               >
-                {htmlDecode(question)}
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  whiteSpace="normal"
+                >
+                  {htmlDecode(question)}
+                </Box>
               </Button>
             </Box>
           ))}

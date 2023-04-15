@@ -41,7 +41,7 @@ const TriviaForm: React.FC<TriviaFormProps> = ({ setFormData, setQuizStarted }) 
               setQuizStarted(true)
             })
             .catch((error) => {
-              console.log(error)
+              console.log('error while fetching:', error)
               alert('An Error occured!')
             })
         }}

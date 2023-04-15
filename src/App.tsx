@@ -10,10 +10,6 @@ function App() {
   const [questionNumber, setQuestionNumber] = useState(0)
   const [playerPoints, setPlayerPoints] = useState(0)
 
-  if (questionNumber >= formData.length) {
-    console.log('Quiz finished')
-  }
-
   function handleRestartQuiz() {
     setQuizStarted(false)
     setPlayerPoints(0)

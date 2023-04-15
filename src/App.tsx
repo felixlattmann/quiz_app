@@ -13,6 +13,7 @@ function App() {
   function handleRestartQuiz() {
     setQuizStarted(false)
     setPlayerPoints(0)
+    setQuestionNumber(0)
   }
 
   if (quizStarted === true && questionNumber >= formData.length) {
